@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Prijava</title>
+        <style>
+            #prijava {
+                text-align: center;
+            }
+            .container {
+                padding: 15px;
+            }
+            input[type=text]{
+                width: 99%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                display: inline-block;
+                border: none;
+                background: #f1f1f1;
+            }
+            
+            .gumb {
+                background-color: green;
+                color: white;
+                padding: 16px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <form>
+            <div class="container">
+                    <h1 id="prijava">Prijava</h1>
+
+                    <label for="ime"><b>Uporabniško ime:</b></label>
+                    <input type="text" id="ime" name="ime" required>
+
+                    <label for="geslo"><b>Geslo:</b></label>
+                    <input type="text" id="geslo" name="geslo" required>
+
+                    <button type="submit" class="gumb">Prijavi se</button>
+            </div>
+        </form>
+    </body>
+</html>
