@@ -25,9 +25,6 @@ class Izdelki:
             podatki = list(cursor.fetchall())
             return [Izdelki(*pod) for pod in podatki]
 
-
-
-    
 class Dostava:
     
     def __init__(self, id, mesto, postna_stevilka):
@@ -76,6 +73,15 @@ class Narocila:
                 """)
             podatki = list(cursor.fetchall())
             return [Narocila(*pod) for pod in podatki]
+    
+    @staticmethod
+    def shrani_narocilo(uporabnik_id, skupna_cena, datum, dostava_id):
+        """vstavi narocilo v bazo"""
+        with conn:
+            cursor = conn.execute(
+                """INSERT INTO narocila (uporabnik_id, skupna_cena, datum, dostava_id) VALUES (?, ?, ?, ?)""", 
+                (uporabnik_id, skupna_cena, datum, dostava_id)
+            )
 
 class PostavkeNarocil:
     
@@ -120,3 +126,40 @@ class Uporabniki:
                 (ime, priimek, email, geslo)
             )
 
+class Statistika:
+    @staticmethod
+    def dobi_statistiko():
+        with conn:
+            # Skupno število naročil
+            cursor = conn.execute("SELECT COUNT(*) FROM narocila")
+            st_narocil = cursor.fetchone()[0]
+
+            # Skupna vrednost naročil
+            cursor = conn.execute("SELECT SUM(skupna_cena) FROM narocila")
+            skupna_vrednost = round(cursor.fetchone()[0] or 0, 2)
+
+            # Število registriranih uporabnikov
+            cursor = conn.execute("SELECT COUNT(*) FROM uporabniki")
+            st_uporabnikov = cursor.fetchone()[0]
+
+            # Najbolj priljubljena kategorija
+            cursor = conn.execute("""
+                SELECT k.naziv, COUNT(p.id) as st_postavk
+                FROM kategorije k
+                JOIN izdelki i ON i.kategorija_id = k.id
+                JOIN postavke_narocil p ON p.izdelek_id = i.id
+                GROUP BY k.id, k.naziv
+                ORDER BY st_postavk DESC
+                LIMIT 1
+            """)
+            priljubljena_kategorija = cursor.fetchone()
+            priljubljena_kategorija = priljubljena_kategorija[0] if priljubljena_kategorija else "Ni podatkov"
+
+            return {
+                'st_narocil': st_narocil,
+                'skupna_vrednost': skupna_vrednost,
+                'st_uporabnikov': st_uporabnikov,
+                'priljubljena_kategorija': priljubljena_kategorija
+            }
+            
+        

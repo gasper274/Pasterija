@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistika</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1, h2, h3 { color: #333; }
+        .error { color: red; }
+        .back-link { margin-top: 20px; display: inline-block; }
+        canvas { max-width: 600px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Statistika trgovine</h1>
+    
+    % if statistika:
+        <h2>Statistični podatki</h2>
+        <ul>
+            <li><strong>Skupno število naročil:</strong> {{statistika['st_narocil']}}</li>
+            <li><strong>Skupna vrednost naročil:</strong> {{statistika['skupna_vrednost']}} €</li>
+            <li><strong>Število registriranih uporabnikov:</strong> {{statistika['st_uporabnikov']}}</li>
+            <li><strong>Najbolj priljubljena kategorija:</strong> {{statistika['priljubljena_kategorija']}}</li>
+        </ul>
+    % end
+    
+    <a href="/" class="back-link">Nazaj na domačo stran</a>
+</body>
+</html>
