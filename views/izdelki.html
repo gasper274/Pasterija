@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Izdelki</title>
+<style>
+    h1 {
+        border: 2px solid black;
+        text-align: center;
+    }
+
+</style>
+
+</head>
+<body>
+    % if uporabnik_id:
+        <h1>Izdelki na voljo:</h1>
+        % for izdelek in izdelki:
+            <h2 id="lol"> {{izdelek.naziv}}</h2>
+                <p>{{izdelek.opis}} </p>
+                <p>Cena: {{izdelek.cena}} €</p>
+                    <form action="/dodaj-v-kosarico/{{izdelek.naziv}}" method="post">
+                    <input type="submit" value="Dodaj v košarico">
+                </form>
+            <hr>
+        % end
+    % else:
+        <h1>Izdelki na voljo:</h1>
+        % for izdelek in izdelki:
+            <h2> {{izdelek.naziv}}</h2>
+                <p>{{izdelek.opis}}</p>
+                <p>Cena: {{izdelek.cena}} €</p>
+            <hr>
+        % end
+    % end
+
+</body>
+</html>
