@@ -22,6 +22,8 @@ Imela bova naslednje tabele:
 6. Dostava
  - vsebuje podatke o dostavi
 
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/ca7513e9-b1d4-40ab-839f-33c6be6e24a8" />
+
 Povezave tabel:
 
 Uporabniki -- Naročila: en uporabnik lahko odda več naročil (1:N)
