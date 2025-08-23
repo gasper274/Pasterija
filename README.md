@@ -1,6 +1,6 @@
 # Pasterija
 
-Naredila bova spletno trgovino, ki se ukvarja s prodajo testenin in prodajo že narejenih jedi s testeninami. Stran bo omogočala registracijo uporabnika, omogočeno dodajanje novih izdelkov v bazo, uporabnik bo lahko oddal naročilo. Naredila bova tudi statistiko glede na posamezen mesec.
+Naredila bova spletno trgovino, ki se ukvarja s prodajo testenin in prodajo že narejenih jedi s testeninami. Stran bo omogočala registracijo uporabnika, omogočeno dodajanje novih izdelkov v bazo, uporabnik bo lahko oddal naročilo. Naredila bova tudi statistiko glede na posamezen mesec, katera bi dostopna samo na administracijskemu pogledu.
 
 Imela bova naslednje tabele:
 
@@ -23,7 +23,7 @@ Imela bova naslednje tabele:
  - vsebuje podatke o dostavi
 
 Povezave tabel:
- 
+
 Uporabniki -- Naročila: en uporabnik lahko odda več naročil (1:N)
 Naročila -- Postavke naročil: eno naročilo lahko ima več postavk (1:N)
 Postavke naročil -- Izdelki: ena postavka se veže na en izdelek, isti izdelek lahko nastopa v več postavkah) (N:1)
