@@ -1,26 +1,16 @@
 # Pasterija
 
-Naredila bova spletno trgovino, ki se ukvarja s prodajo testenin in prodajo že narejenih jedi s testeninami. Stran bo omogočala registracijo uporabnika, omogočeno dodajanje novih izdelkov v bazo, uporabnik bo lahko oddal naročilo. Naredila bova tudi statistiko glede na posamezen mesec, katera so dostopna samo na administracijskemu pogledu.
+Naredila bova spletno trgovino, ki se ukvarja s prodajo testenin in prodajo že narejenih jedi s testeninami. Stran bo omogočala registracijo/prijavo uporabnika, dodajanje artiklov v košaričo in oddajanje naročila. Statistika je dostopna samo administratorju strani, uporabnisko ime: admin, geslo: admin zavihek statistika.
 
-Imela bova naslednje tabele:
-
-1. Uporabniki
- - vsebovala bo informacije o uporabnikih (ime, priimek, email, geslo...)
-
-2. Izdelki
- - vsebovala bo infromacije o izdelkih v ponudbi (naziv, opis, cena...)
-
-3. Kategorija
- - skupine izdelkov
-
-4. Naročila
- - podatki o naročilih
-
-5. Postavke naročil
- - povezovalna tabela izdelkov in naročili z informacijo o količini in skupni ceni naročila
-
-6. Dostava
- - vsebuje podatke o dostavi
+Imava 6 tabel:
+<ol>
+  <li>Uporabniki: informacije o uporabniku</li>
+  <li>Izdelki: opis izdelka</li>
+  <li>Kategorija: v katero kategorijo spada izdelek</li>
+  <li>Naročila: vsebuje podatke naročila</li>
+  <li>Postavke naročil: povezovalna tabela izdelkov in naročili z informacijo o količini in skupni ceni naročila </li>
+  <li>Dostava: vsebuje mesto in postno številko naročila </li>
+</ol> 
 
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/ca7513e9-b1d4-40ab-839f-33c6be6e24a8" />
 
