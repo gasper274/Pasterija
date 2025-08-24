@@ -25,9 +25,11 @@ Imela bova naslednje tabele:
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/ca7513e9-b1d4-40ab-839f-33c6be6e24a8" />
 
 Povezave tabel:
+<ul>
+  <li>Uporabniki -- Naročila: en uporabnik lahko odda več naročil (1:N)</li>
+  <li>Naročila -- Postavke naročil: eno naročilo lahko ima več postavk (1:N)</li>
+  <li>Postavke naročil -- Izdelki: ena postavka se veže na en izdelek, isti izdelek lahko nastopa v več postavkah) (N:1)</li>
+ <li>Izdelki -- Kategorije: več izdelkov ima isto kategorijo (N:1)</li>
+ <li>Naročilo -- Dostava: eno naročilo ima eno dostavo (1:1)</li>
+</ul>
 
-Uporabniki -- Naročila: en uporabnik lahko odda več naročil (1:N)
-Naročila -- Postavke naročil: eno naročilo lahko ima več postavk (1:N)
-Postavke naročil -- Izdelki: ena postavka se veže na en izdelek, isti izdelek lahko nastopa v več postavkah) (N:1)
-Izdelki -- Kategorije: več izdelkov ima isto kategorijo (N:1)
-Naročilo -- Dostava: eno naročilo ima eno dostavo (1:1)
